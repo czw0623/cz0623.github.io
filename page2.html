@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page2</title>
+</head>
+<body>
+    <button id="buttonClose">Close</button>
+    <button id="buttonCloseAwait">Close await</button>
+</body>
+<script>
+    document.getElementById('buttonClose').addEventListener('click', function(){
+        window.close();
+    });
+    document.getElementById('buttonCloseAwait').addEventListener('click', async function(){
+        const v= await fetch('https://e0f1-59-124-206-103.ngrok-free.app/page1.html');
+        console.log(v); 
+        window.close();
+    });
+</script>
+</html>

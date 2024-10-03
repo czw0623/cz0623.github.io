@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+</head>
+<body>
+    <button id="buttonOpen">Open</button>
+</body>
+<script>
+    document.getElementById('buttonOpen').addEventListener('click', function(){
+        const w=window.open('https://e0f1-59-124-206-103.ngrok-free.app/page2.html', '_blank');
+        //const w=window.open('page2.html', '_blank');
+        let checkWindowClosed = setInterval(() => {
+            if (w.closed) {
+                clearInterval(checkWindowClosed);
+                alert('window closed');
+            }
+        }, 1000);
+    });
+</script>
+</html>
